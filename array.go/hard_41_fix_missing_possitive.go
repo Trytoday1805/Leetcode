@@ -12,8 +12,8 @@ func firstMissingPositive(nums []int) int {
     for i := 0; i < n; i++ {
         for nums[i] > 0 && nums[i] <= n && nums[nums[i]-1] != nums[i] {
 			// Áp dụng multiple assigst mà ko cần biến trung gian
-			//Cú pháp gán nhiều giá trị trong Go cho phép bạn gán nhiều biến cùng lúc trong một dòng lệnh.
-			//Phép gán này diễn ra đồng thời, nghĩa là tất cả các biểu thức bên phải được đánh giá trước, sau đó các giá trị mới sẽ được gán cho các biến tương ứng ở bên trái cùng lúc.
+			// Cú pháp gán nhiều giá trị trong Go cho phép bạn gán nhiều biến cùng lúc trong một dòng lệnh.
+			// Phép gán này diễn ra đồng thời, nghĩa là tất cả các biểu thức bên phải được đánh giá trước, sau đó các giá trị mới sẽ được gán cho các biến tương ứng ở bên trái cùng lúc.
             nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
         }
     }
@@ -28,3 +28,11 @@ func firstMissingPositive(nums []int) int {
     // Nếu tất cả số đều đúng vị trí, trả về n + 1
     return n + 1
 }
+
+// Note : về cách hoạt động nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
+// CHia ra trái / phải từ dấu bằng
+// Trái : nums[nums[i]-1], nums[i] =
+// Phải : = nums[i], nums[nums[i]-1]
+// Nó sẽ chạy bên phải trc, num[0]=3 và nums[2] là giá trị đang ở vị trí 2
+// Gán num[0] cho nums[nums[i]-1](bên trái) để đúng vị trí
+// Gán giá trị nums[nums[i]-1] cho nums[i].
