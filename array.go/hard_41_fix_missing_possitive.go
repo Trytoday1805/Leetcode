@@ -30,7 +30,7 @@ func firstMissingPositive(nums []int) int {
 }
 
 // Note : về cách hoạt động nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
-// CHia ra trái / phải từ dấu bằng
+// Chia ra trái / phải từ dấu bằng
 // Trái : nums[nums[i]-1], nums[i] =
 // Phải : = nums[i], nums[nums[i]-1]
 // Nó sẽ chạy bên phải trc, num[0]=3 và nums[2] là giá trị đang ở vị trí 2
